@@ -128,6 +128,8 @@ namespace SuperBeerWorld
             base.Draw(gameTime);
         }
 
+        // Methode voor het navigeren tussen de pagina's
+        // Geruik als volgende: goToPage(typeof(NAAM_HIER_VAN_PAGINA));
         public void goToPage(System.Type pageName)
         {
             var frame = new Frame();
