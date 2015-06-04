@@ -110,10 +110,7 @@ namespace SuperBeerWorld
                     if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
                     {
                         // Load other screen
-                        var frame = new Frame();
-                        frame.Navigate(typeof(Main));
-                        Window.Current.Content = frame;
-                        Window.Current.Activate();
+                        
                     }
                 }
                 else
