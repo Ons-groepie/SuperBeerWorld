@@ -144,6 +144,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BlankPage1.xaml.cs">
+      <DependentUpon>BlankPage1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
@@ -162,6 +165,12 @@
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\splashscreenbier.png" />
     <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Content\background-main.jpg" />
+    <Content Include="Content\blank.png" />
+    <Content Include="Content\start-click.png" />
+    <Content Include="Content\start-clicked.png" />
+    <Content Include="Content\start-hover.png" />
+    <Content Include="Content\start-normal.png" />
     <Content Include="FacebookConfig.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="BlankPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Common\StandardStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

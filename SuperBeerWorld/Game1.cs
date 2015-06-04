@@ -1,11 +1,11 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Activation;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace SuperBeerWorld
 {
@@ -56,7 +56,6 @@ namespace SuperBeerWorld
             spriteBatch = new SpriteBatch(GraphicsDevice);
             blank = Content.Load<Texture2D>("blank");
             background = Content.Load<Texture2D>("background-main");
-            mouseImage = Content.Load<Texture2D>("cursor");
             startNormal = Content.Load<Texture2D>("start-normal");
             startHover = Content.Load<Texture2D>("start-hover");
             startClick = Content.Load<Texture2D>("start-click");
@@ -110,7 +109,7 @@ namespace SuperBeerWorld
                     if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
                     {
                         // Load other screen
-                        
+                        goToPage();
                     }
                 }
                 else
@@ -130,6 +129,14 @@ namespace SuperBeerWorld
             spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        public void goToPage()
+        {
+            var frame = new Frame();
+            frame.Navigate(typeof(BlankPage1));
+            Windows.UI.Xaml.Window.Current.Content = frame;
+            Windows.UI.Xaml.Window.Current.Activate();
         }
     }
 }
