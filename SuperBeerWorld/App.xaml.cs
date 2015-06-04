@@ -1,6 +1,8 @@
 ﻿using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
@@ -30,7 +32,7 @@ namespace SuperBeerWorld
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
             var gamePage = Window.Current.Content as GamePage;
-
+            
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (gamePage == null)
@@ -45,10 +47,11 @@ namespace SuperBeerWorld
 
                 // Place the GamePage in the current Window
                 Window.Current.Content = gamePage;
+                
             }
 
-            // Ensure the current window is active
             Window.Current.Activate();
+
         }
 
         /// <summary>

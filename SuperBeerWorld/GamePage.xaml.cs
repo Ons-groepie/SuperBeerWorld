@@ -20,5 +20,6 @@ namespace SuperBeerWorld
             // Create the game.
             _game = XamlGame<Game1>.Create(args, Window.Current.CoreWindow, this);
         }
+
     }
 }

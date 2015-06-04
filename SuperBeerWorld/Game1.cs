@@ -1,5 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Activation;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace SuperBeerWorld
 {
@@ -9,7 +15,27 @@ namespace SuperBeerWorld
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
+        GraphicsDevice device;
         SpriteBatch spriteBatch;
+        MouseState mouseState;
+        MouseState oldMouseState;
+
+        // Background
+        Texture2D blank;
+        Texture2D background;
+
+        // Start buttons
+        Texture2D startNormal;
+        Texture2D startHover;
+        Texture2D startClick;
+        Texture2D startClicked;
+
+        // Mouse control
+        Texture2D mouseImage;
+
+        // Vars
+        int screenWidth;
+        int screenHeight;
 
         public Game1()
         {
@@ -18,61 +44,93 @@ namespace SuperBeerWorld
             this.IsMouseVisible = true;
         }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
         protected override void LoadContent()
         {
+
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
+            blank = Content.Load<Texture2D>("blank");
+            background = Content.Load<Texture2D>("background-main");
+            mouseImage = Content.Load<Texture2D>("cursor");
+            startNormal = Content.Load<Texture2D>("start-normal");
+            startHover = Content.Load<Texture2D>("start-hover");
+            startClick = Content.Load<Texture2D>("start-click");
+            startClicked = Content.Load<Texture2D>("start-clicked");
+            device = graphics.GraphicsDevice;
         }
 
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// game-specific content.
-        /// </summary>
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
         }
 
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
             // TODO: Add your update logic here
-
+            mouseState = Mouse.GetState();
             base.Update(gameTime);
         }
 
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.DeepPink);
+            GraphicsDevice.Clear(Color.White);
 
-            // TODO: Add your drawing code here
+            // Start de spriteBatch
+            spriteBatch.Begin();
+
+            // Bepaal de schermresolutie
+            screenWidth = device.PresentationParameters.BackBufferWidth;
+            screenHeight = device.PresentationParameters.BackBufferHeight;
+
+            int startPosX = 300;
+            int startPosY = 500;
+            int startWidth = 400;
+            int startHeight = 144;
+
+            // Teken de sprites
+            spriteBatch.Draw(background, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
+
+            if (mouseState.X >= startPosX && mouseState.X <= startPosX + startWidth)
+            {
+                if (mouseState.Y >= startPosY && mouseState.Y <= startPosY + startHeight)
+                {
+                    if (mouseState.LeftButton == ButtonState.Pressed)
+                    {
+                        spriteBatch.Draw(startClick, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+                    }
+                    else
+                    {
+                        spriteBatch.Draw(startHover, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+                    }
+                    if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
+                    {
+                        // Load other screen
+                        var frame = new Frame();
+                        frame.Navigate(typeof(Main));
+                        Window.Current.Content = frame;
+                        Window.Current.Activate();
+                    }
+                }
+                else
+                {
+                    spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+                }
+            }
+            else
+            {
+                spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+                spriteBatch.End();
+            }
+
+            oldMouseState = mouseState;
+
+            // End de spireBatch
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
