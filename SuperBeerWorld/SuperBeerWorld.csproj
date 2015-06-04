@@ -160,7 +160,7 @@
   <ItemGroup>
     <Content Include="Assets\Logo.png" />
     <Content Include="Assets\SmallLogo.png" />
-    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\splashscreenbier.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="FacebookConfig.xml" />
   </ItemGroup>

@@ -15,6 +15,7 @@ namespace SuperBeerWorld
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            this.IsMouseVisible = true;
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace SuperBeerWorld
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.DeepPink);
 
             // TODO: Add your drawing code here
 

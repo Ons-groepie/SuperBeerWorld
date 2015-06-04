@@ -8,6 +8,10 @@
     mc:Ignorable="d">
 
     <Grid>
+        <StackPanel Margin="0,10,1161,0">
+            <TextBlock Margin="20">You son of a bietch</TextBlock>
+            <Button Margin="10" HorizontalAlignment="Right">OK</Button>
+        </StackPanel>
     </Grid>
     
 </SwapChainBackgroundPanel>
