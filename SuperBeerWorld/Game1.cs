@@ -106,7 +106,7 @@ namespace SuperBeerWorld
                     if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
                     {
                         // Load other screen
-                        goToPage(typeof(BlankPage1));
+                        goToPage(typeof(GamePage));
                     }
                 }
                 else
@@ -117,7 +117,6 @@ namespace SuperBeerWorld
             else
             {
                 spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
-                spriteBatch.End();
             }
 
             oldMouseState = mouseState;
@@ -134,6 +133,14 @@ namespace SuperBeerWorld
         {
             var frame = new Frame();
             frame.Navigate(pageName);
+            Windows.UI.Xaml.Window.Current.Content = frame;
+            Windows.UI.Xaml.Window.Current.Activate();
+        }
+
+        public void goToPage()
+        {
+            var frame = new Frame();
+            frame.Navigate(typeof(Game1));
             Windows.UI.Xaml.Window.Current.Content = frame;
             Windows.UI.Xaml.Window.Current.Activate();
         }
