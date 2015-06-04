@@ -137,5 +137,13 @@ namespace SuperBeerWorld
             Windows.UI.Xaml.Window.Current.Content = frame;
             Windows.UI.Xaml.Window.Current.Activate();
         }
+
+        public void goToPage(System.Type character)
+        {
+            var frame = new Frame();
+            frame.Navigate(character);
+            Windows.UI.Xaml.Window.Current.Content = frame;
+            Windows.UI.Xaml.Window.Current.Activate();
+        }
     }
 }
