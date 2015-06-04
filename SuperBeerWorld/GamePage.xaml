@@ -8,6 +8,10 @@
     mc:Ignorable="d">
 
     <Grid>
+        <StackPanel Margin="0,10,1161,0">
+            <TextBlock Margin="20">Welcome to the World of XAML</TextBlock>
+            <Button Margin="10" HorizontalAlignment="Right">OK</Button>
+        </StackPanel>
     </Grid>
     
 </SwapChainBackgroundPanel>
