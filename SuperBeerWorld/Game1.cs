@@ -30,9 +30,6 @@ namespace SuperBeerWorld
         Texture2D startClick;
         Texture2D startClicked;
 
-        // Mouse control
-        Texture2D mouseImage;
-
         // Vars
         int screenWidth;
         int screenHeight;
@@ -109,7 +106,7 @@ namespace SuperBeerWorld
                     if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
                     {
                         // Load other screen
-                        goToPage();
+                        goToPage(typeof(BlankPage1));
                     }
                 }
                 else
@@ -131,10 +128,10 @@ namespace SuperBeerWorld
             base.Draw(gameTime);
         }
 
-        public void goToPage()
+        public void goToPage(System.Type pageName)
         {
             var frame = new Frame();
-            frame.Navigate(typeof(BlankPage1));
+            frame.Navigate(pageName);
             Windows.UI.Xaml.Window.Current.Content = frame;
             Windows.UI.Xaml.Window.Current.Activate();
         }
