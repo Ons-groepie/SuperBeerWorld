@@ -162,6 +162,7 @@
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Content\background-main.jpg" />
     <Content Include="Content\blank.png" />
+    <Content Include="Content\FacebookButton.png" />
     <Content Include="Content\start-click.png" />
     <Content Include="Content\start-clicked.png" />
     <Content Include="Content\start-hover.png" />

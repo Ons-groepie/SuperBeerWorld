@@ -25,7 +25,7 @@
       </m2:VisualElements>
       <Extensions>
         <Extension Category="windows.protocol">
-          <Protocol Name="fb423469087833316" />
+          <Protocol Name="fb1446323225671539" />
         </Extension>
       </Extensions>
     </Application>
