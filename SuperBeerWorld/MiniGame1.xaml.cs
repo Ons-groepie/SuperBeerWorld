@@ -1,27 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace SuperBeerWorld
 {
-    class MiniGame : Game
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class MiniGame1 : Page
     {
         GraphicsDeviceManager graphics;
         GraphicsDevice device;
         SpriteBatch spriteBatch;
 
-
-        // Vars
-        int screenWidth;
-        int screenHeight;
-
-        public MiniGame()
+        public MiniGame1()
         {
+            InheritShit a  = new InheritShit();
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             this.IsMouseVisible = true;
@@ -67,6 +76,12 @@ namespace SuperBeerWorld
             spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        public class InheritShit : Game
+        { 
+            public InheritShit()
+            {}
         }
     }
 }
