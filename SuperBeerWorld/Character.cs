@@ -17,7 +17,7 @@ namespace SuperBeerWorld
         String afbeelding;
         int speed;
         int jumpheight;
-
+        /*
         public void setAP(int AP)
         {
             
@@ -57,5 +57,6 @@ namespace SuperBeerWorld
         {
 
         }
+        */
     }
 }
