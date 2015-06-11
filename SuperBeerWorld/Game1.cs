@@ -106,7 +106,7 @@ namespace SuperBeerWorld
                     if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
                     {
                         // Load other screen
-                        goToPage(typeof(GamePage));
+                        goToPage(typeof(MiniGame));
                     }
                 }
                 else

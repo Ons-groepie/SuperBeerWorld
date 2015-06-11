@@ -146,6 +146,7 @@
     </Compile>
     <Compile Include="Game1.cs" />
     <Compile Include="GamePage.xaml.cs" />
+    <Compile Include="MiniGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
