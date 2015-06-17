@@ -9,7 +9,7 @@ namespace SuperBeerWorld
     class Character
     {
 
-        String naam;
+       /* String naam;
         int AP;
         int levens;
         int statiegeld;
@@ -64,6 +64,6 @@ namespace SuperBeerWorld
         private void setJumpHeight
         {
 
-        }
+        }*/
     }
 }
