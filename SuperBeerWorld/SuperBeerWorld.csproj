@@ -176,6 +176,16 @@
     <Content Include="Content\daniel-met-bier-2.png" />
     <Content Include="Content\Daniel-met-bier.png" />
     <Content Include="Content\FacebookButton.png" />
+    <Content Include="Content\numbers\_0.png" />
+    <Content Include="Content\numbers\_1.png" />
+    <Content Include="Content\numbers\_2.png" />
+    <Content Include="Content\numbers\_3.png" />
+    <Content Include="Content\numbers\_4.png" />
+    <Content Include="Content\numbers\_5.png" />
+    <Content Include="Content\numbers\_6.png" />
+    <Content Include="Content\numbers\_7.png" />
+    <Content Include="Content\numbers\_8.png" />
+    <Content Include="Content\numbers\_9.png" />
     <Content Include="Content\start-click.png" />
     <Content Include="Content\start-clicked.png" />
     <Content Include="Content\start-hover.png" />
