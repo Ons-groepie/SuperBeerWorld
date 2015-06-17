@@ -102,15 +102,15 @@ namespace SuperBeerWorld
                         spriteBatch.Draw(startClick, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
                     }
                     else
-                    {
+                    { 
                         spriteBatch.Draw(startHover, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
                     }
                     if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
                     {
                         // Load other screen
-                        goToPage(typeof(MiniGame1));
+                        goToPage(typeof(Class1));
                     }
-                }
+                } 
                 else
                 {
                     spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);

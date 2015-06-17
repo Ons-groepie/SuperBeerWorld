@@ -8,19 +8,18 @@ namespace SuperBeerWorld
 {
     class Character
     {
-        String naam;
-        String afbeelding;
+        String naam; 
         String character;
         int AP;
         int levens;
         int statiegeld;
 
         // Default constructor
-        public Character(String naam)
+        public Character(String naam) 
         {
             checkCharacter(this.naam);
             naam = character;
-            AP = 0;
+            AP = 0; 
             statiegeld = 0;
             levens = 3;
         }
@@ -37,6 +36,7 @@ namespace SuperBeerWorld
 
         // Controleren of de ingegeven naam bestaat in onze game.
         // Zo niet, dan default character gebruiken.
+        // De variabel naam wordt eerst omgezet naar lowercase.
         private void checkCharacter(String naam)
         {
             if (naam.ToLower() == "daniel" || naam.ToLower() == "jolt" || naam.ToLower() == "maaike" || naam.ToLower() == "falco" || naam.ToLower() == "martijn")
@@ -49,12 +49,6 @@ namespace SuperBeerWorld
                 character = "daniel";
             }
         }
-
-        /*
-         * 
-         *  Blokje met SET methodes
-         *  
-         */
 
         // AP verhogen
         public void setAP(int AP)
@@ -73,5 +67,36 @@ namespace SuperBeerWorld
         {
             statiegeld = statiegeld + this.statiegeld;
         }
+
+        // Return Alcohol Promilage
+        public int getAP()
+        {
+            return AP;
+        }
+
+        // Return aantal levens
+        public int getLevens()
+        {
+            return levens;
+        }
+
+        // Return statiegeld
+        public int getStatiegeld()
+        {
+            return statiegeld;
+        }
+
+        // Return character
+        public String getCharacter()
+        {
+            return character;
+        }
+
+        // Return naam
+        public String getNaam()
+        {
+            return naam;
+        }
+
     }
 }
