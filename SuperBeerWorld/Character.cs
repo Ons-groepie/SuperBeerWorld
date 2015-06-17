@@ -8,6 +8,7 @@ namespace SuperBeerWorld
 {
     class Character
     {
+
         String naam;
         int AP;
         int levens;
@@ -17,10 +18,17 @@ namespace SuperBeerWorld
         String afbeelding;
         int speed;
         int jumpheight;
-        /*
+
+        public Character(String naam)
+        {
+            naam = this.naam;
+            AP = 0;
+            levens = 3;
+        }
+
         public void setAP(int AP)
         {
-            
+            AP = this.AP;
         }
 
         public void setLevens
@@ -57,6 +65,5 @@ namespace SuperBeerWorld
         {
 
         }
-        */
     }
 }
