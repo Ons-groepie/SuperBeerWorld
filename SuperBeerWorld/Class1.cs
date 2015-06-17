@@ -33,7 +33,7 @@ namespace SuperBeerWorld
             device = graphics.GraphicsDevice;
         }
 
-        protected override void UnloadContent()
+        protected override void UnloadContent() 
         {
             // TODO: Unload any non ContentManager content here
         }
