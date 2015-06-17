@@ -20,6 +20,8 @@ namespace SuperBeerWorld
         Texture2D BierVast;
         Texture2D BierAanDeMond;
 
+        Texture2D geslaagd;
+
         Texture2D ApBar;
         Texture2D Bier;
 
