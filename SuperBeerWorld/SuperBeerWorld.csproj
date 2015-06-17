@@ -145,8 +145,11 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Character.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="Enemy.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GamePage.xaml.cs" />
+    <Compile Include="Level.cs" />
     <Compile Include="MiniGame1.xaml.cs">
       <DependentUpon>MiniGame1.xaml</DependentUpon>
     </Compile>

@@ -38,7 +38,7 @@
                 x:Name="loginButton" 
                 Grid.Row="2" 
                 HorizontalAlignment="Left"
-                SessionStateChanged="OnSessionStateChanged" Width="400" Height="100" Margin="275,0,0,200" LoginBehavior="LoginBehaviorApplicationOnly" />
+                SessionStateChanged="OnSessionStateChanged" Width="400" Height="100" Margin="275,0,0,200" />
         </Grid>
     </Grid>
 
