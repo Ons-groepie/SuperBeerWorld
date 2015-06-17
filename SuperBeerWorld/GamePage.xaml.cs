@@ -2,6 +2,8 @@
 using Windows.UI.Xaml.Controls;
 using MonoGame.Framework;
 using Windows.ApplicationModel.Activation;
+using Facebook.Client;
+using System.IO;
 
 
 namespace SuperBeerWorld
