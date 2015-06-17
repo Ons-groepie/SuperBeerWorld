@@ -173,6 +173,7 @@
     <Content Include="Content\daniel-met-bier-2.png" />
     <Content Include="Content\Daniel-met-bier.png" />
     <Content Include="Content\FacebookButton.png" />
+    <Content Include="Content\geslaagd.png" />
     <Content Include="Content\start-click.png" />
     <Content Include="Content\start-clicked.png" />
     <Content Include="Content\start-hover.png" />
