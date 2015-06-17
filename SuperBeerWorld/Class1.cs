@@ -53,7 +53,7 @@ namespace SuperBeerWorld
             ApBar = Content.Load<Texture2D>("AP-bar");
         }
 
-        protected override void UnloadContent()
+        protected override void UnloadContent() 
         {
             // TODO: Unload any non ContentManager content here
         }
