@@ -15,7 +15,7 @@ namespace SuperBeerWorld
         int statiegeld;
 
         // Default constructor
-        public Character(String naam)
+        public Character(String naam) 
         {
             checkCharacter(this.naam);
             naam = character;

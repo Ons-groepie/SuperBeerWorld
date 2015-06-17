@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SuperBeerWorld
-{
+{ 
     class Item
     {
         // width height type xpos and ypos van een item
