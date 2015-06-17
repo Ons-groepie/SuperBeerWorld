@@ -3,6 +3,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using Facebook.Client;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
@@ -68,6 +69,19 @@ namespace SuperBeerWorld
             // TODO: Save application state and stop any background activity
 			
             deferral.Complete();
+        }
+
+        protected override void OnActivated(IActivatedEventArgs args)
+        {
+            base.OnActivated(args);
+            var protocolArgs = args as ProtocolActivatedEventArgs;
+            LifecycleHelper.FacebookAuthenticationReceived(protocolArgs);
+        }
+
+        private void OnFacebookAuthenticationFinished(AccessTokenData session)
+        {
+            // here the authentication succeeded callback will be received.
+            // put your login logic here
         }
     }
 }

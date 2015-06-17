@@ -29,6 +29,7 @@ namespace SuperBeerWorld
         Texture2D startHover;
         Texture2D startClick;
         Texture2D startClicked;
+        Texture2D facebook;
 
         // Vars
         int screenWidth;
@@ -57,6 +58,7 @@ namespace SuperBeerWorld
             startHover = Content.Load<Texture2D>("start-hover");
             startClick = Content.Load<Texture2D>("start-click");
             startClicked = Content.Load<Texture2D>("start-clicked");
+            facebook = Content.Load<Texture2D>("FacebookButton");
             device = graphics.GraphicsDevice;
         }
 
@@ -106,7 +108,7 @@ namespace SuperBeerWorld
                     if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
                     {
                         // Load other screen
-                        goToPage(typeof(MiniGame));
+                        goToPage(typeof(MiniGame1));
                     }
                 }
                 else
@@ -118,6 +120,8 @@ namespace SuperBeerWorld
             {
                 spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
             }
+
+
 
             oldMouseState = mouseState;
 
