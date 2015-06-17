@@ -11,6 +11,7 @@ namespace SuperBeerWorld
 {
     class Class1 : Game
     {
+
         GraphicsDeviceManager graphics;
         GraphicsDevice device;
         SpriteBatch spriteBatch;
