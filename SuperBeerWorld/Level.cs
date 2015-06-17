@@ -9,8 +9,8 @@ namespace SuperBeerWorld
     public class Level
     { 
         private Character character;
-        private Enemy enemy;
-        private Item item;
+       // private Enemy enemy;
+        //private Item item;
         private int level;
         private String background;
         private int width;
