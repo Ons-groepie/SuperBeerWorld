@@ -19,7 +19,7 @@ namespace SuperBeerWorld
         {
             checkCharacter(this.naam);
             naam = character;
-            AP = 0;
+            AP = 0; 
             statiegeld = 0;
             levens = 3;
         }

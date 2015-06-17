@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SuperBeerWorld
 {
-    public class Level
+    public class Level 
     { 
         private Character character;
        // private Enemy enemy;

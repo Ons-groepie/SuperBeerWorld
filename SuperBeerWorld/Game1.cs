@@ -110,7 +110,7 @@ namespace SuperBeerWorld
                         // Load other screen
                         goToPage(typeof(MiniGame1));
                     }
-                }
+                } 
                 else
                 {
                     spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);

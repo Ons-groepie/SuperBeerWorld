@@ -15,7 +15,7 @@ namespace SuperBeerWorld
         public Enemy(int xpos, int ypos, int type, String afbeelding, int damage, int speed)
         {
             this.xpos = xpos;
-            this.ypos = ypos;
+            this.ypos = ypos; 
             this.type = type;
             this.afbeelding = afbeelding;
             this.damage = damage;
