@@ -270,7 +270,7 @@ namespace SuperBeerWorld
                     break;
                 case 23:
                     spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
-                    spriteBatch.Draw(_3, new Rectangle(int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_3, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 24:
                     spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
