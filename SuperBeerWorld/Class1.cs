@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Audio;
 
 namespace SuperBeerWorld
 {
@@ -20,6 +21,8 @@ namespace SuperBeerWorld
 
         Texture2D ApBar;
         Texture2D Bier;
+
+        private SoundEffect effect;
 
         //Numbers
         Texture2D _0;
@@ -41,7 +44,7 @@ namespace SuperBeerWorld
         Texture2D arrowDown, arrowUp, arrowLeft, arrowRight, frame;
 
         bool  isArrowUpPress, isArrowDownPress, isArrowLeftPress, isArrowRightPress;
-        
+        public bool isPlayingMusic;
 
         int Ap; 
         int tijd;
@@ -62,6 +65,8 @@ namespace SuperBeerWorld
             isDrunk = false;
             Ap = 1;
             oldState = Keyboard.GetState();
+
+            effect = content.Load<SoundEffect>("slikken");
 
             BierVast = content.Load<Texture2D>("Daniel-met-bier-2");
             BierAanDeMond = content.Load<Texture2D>("Daniel-met-bier");
@@ -101,7 +106,8 @@ namespace SuperBeerWorld
                 isSpaceDown = true;
                 if(Ap <= 100)
                 {
-                Ap++;               
+                Ap++;
+                //effect.Play();
             }
                               
             }

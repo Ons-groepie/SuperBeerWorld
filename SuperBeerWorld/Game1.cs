@@ -63,8 +63,7 @@ namespace SuperBeerWorld
         protected override void LoadContent()
         {
             backgroundMusic = Content.Load<Song>("background-music");
-            MediaPlayer.Play(backgroundMusic);
-
+            
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             device = graphics.GraphicsDevice;
@@ -89,6 +88,11 @@ namespace SuperBeerWorld
                 case Screens.Class1:
                     class1.Update(gameTime);
                     button.Visibility = Visibility.Collapsed;
+                    if (!class1.isPlayingMusic)
+                    {
+                       MediaPlayer.Play(backgroundMusic);
+                       class1.isPlayingMusic = true;
+                    }
                     break;
                 case Screens.MainMenu:
                     mainmenu.Update(gameTime);
