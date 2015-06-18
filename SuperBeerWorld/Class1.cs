@@ -50,6 +50,12 @@ namespace SuperBeerWorld
         int screenWidth;
         int screenHeight;
 
+
+        int procenten;
+        int hoogtePlaatje;
+        float BierBarHoogte;
+        float opvulling;
+
         public Class1(ContentManager content)
         {
             //graphics = new GraphicsDeviceManager(this);
@@ -136,12 +142,16 @@ namespace SuperBeerWorld
                 isDrunk = true;
             
             }
+
+            procenten = 800 / 100 * Ap;
+            hoogtePlaatje = (805 - procenten) + 140;
+            BierBarHoogte = hoogtePlaatje / 1920f;
+            opvulling = procenten / 1920f;
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch,GraphicsDevice device)
         {
-            int procenten = 800 / 100 * Ap;
-            int hoogtePlaatje = (805 - procenten) + 140;
+
 
             // Bepaal de schermresolutie
             screenWidth = device.PresentationParameters.BackBufferWidth;
@@ -152,143 +162,143 @@ namespace SuperBeerWorld
             //(int)(screenWidth * 0.8f)
 
             spriteBatch.Draw(Background, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
-            spriteBatch.Draw(ApBar, new Rectangle((int)(screenWidth * 0.026f), (int)(screenHeight * 0.111f), (int)(screenWidth * 0.167f), 840), Color.White);
-            spriteBatch.Draw(Bier, new Rectangle(197,hoogtePlaatje,145,procenten), Color.White);
+            spriteBatch.Draw(ApBar, new Rectangle((int)(screenWidth * 0.026f), (int)(screenHeight * 0.111f), (int)(screenWidth * 0.167f), (int)(screenHeight * 0.777f)), Color.White);
+            spriteBatch.Draw(Bier, new Rectangle((int)(screenWidth * 0.102f), (int)(screenHeight * BierBarHoogte), (int)(screenWidth * 0.075f), (int)(screenHeight * opvulling)), Color.White);
             if (isSpaceDown == false)
             {
-                spriteBatch.Draw(BierVast, new Rectangle(1050, 508, 500, 500), Color.White);
+                spriteBatch.Draw(BierVast, new Rectangle((int)(screenWidth * 0.546f), (int)(screenHeight * 0.470f), (int)(screenWidth * 0.260f), (int)(screenHeight * 0.462f)), Color.White);
             }
             else if (isSpaceDown == true)
             {
-                spriteBatch.Draw(BierAanDeMond, new Rectangle(1050, 508, 500, 500), Color.White);
+                spriteBatch.Draw(BierAanDeMond, new Rectangle((int)(screenWidth * 0.546f), (int)(screenHeight * 0.470f), (int)(screenWidth * 0.260f), (int)(screenHeight * 0.462f)), Color.White);
             }
 
             if (isDrunk == true)
             {
-                spriteBatch.Draw(geslaagd, new Rectangle(538, 317, 844, 446), Color.White);
+                spriteBatch.Draw(geslaagd, new Rectangle((int)(screenWidth * 0.280f), (int)(screenHeight * 0.293f), (int)(screenWidth * 0.439f), (int)(screenHeight * 0.412f)), Color.White);
             }
            
             switch (tijd)
             {
                 case 1:
-                    spriteBatch.Draw(_0, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_1, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_0, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_1, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 2:
-                    spriteBatch.Draw(_0, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_2, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_0, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
-                case 3: 
-                    spriteBatch.Draw(_0, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_3, new Rectangle(1800, 50, 100, 100), Color.White);
+                case 3:
+                    spriteBatch.Draw(_0, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_3, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 4:
-                    spriteBatch.Draw(_0, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_4, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_0, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_4, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 5:
-                    spriteBatch.Draw(_0, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_5, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_0, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_5, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 6:
-                    spriteBatch.Draw(_0, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_6, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_0, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_6, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 7:
-                    spriteBatch.Draw(_0, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_7, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_0, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_7, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 8:
-                    spriteBatch.Draw(_0, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_8, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_0, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_8, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 9:
-                    spriteBatch.Draw(_0, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_9, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_0, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_9, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 10:
-                    spriteBatch.Draw(_1, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_0, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_1, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_0, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 11:
-                    spriteBatch.Draw(_1, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_1, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_1, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_1, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 12:
-                    spriteBatch.Draw(_1, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_2, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_1, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 13:
-                    spriteBatch.Draw(_1, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_3, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_1, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_3, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 14:
-                    spriteBatch.Draw(_1, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_4, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_1, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_4, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 15:
-                    spriteBatch.Draw(_1, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_5, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_1, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_5, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 16:
-                    spriteBatch.Draw(_1, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_6, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_1, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_6, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 17:
-                    spriteBatch.Draw(_1, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_7, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_1, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_7, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 18:
-                    spriteBatch.Draw(_1, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_8, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_1, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_8, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 19:
-                    spriteBatch.Draw(_1, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_9, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_1, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_9, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 20:
-                    spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_0, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_0, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 21:
-                    spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_1, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_1, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 22:
-                    spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_2, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 23:
-                    spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_3, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_3, new Rectangle(int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 24:
-                    spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_4, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_4, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 25:
-                    spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_5, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_5, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 26:
-                    spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_6, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_6, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 27:
-                    spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_7, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_7, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 28:
-                    spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_8, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_8, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 29:
-                    spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_9, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_2, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_9, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 case 30:
-                    spriteBatch.Draw(_3, new Rectangle(1750, 50, 100, 100), Color.White);
-                    spriteBatch.Draw(_0, new Rectangle(1800, 50, 100, 100), Color.White);
+                    spriteBatch.Draw(_3, new Rectangle((int)(screenWidth * 0.911f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
+                    spriteBatch.Draw(_0, new Rectangle((int)(screenWidth * 0.937f), (int)(screenHeight * 0.046f), (int)(screenWidth * 0.052f), (int)(screenHeight * 0.092f)), Color.White);
                     break;
                 default:
                     break;
