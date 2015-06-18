@@ -83,7 +83,7 @@ namespace SuperBeerWorld
             ApBar = Content.Load<Texture2D>("AP-bar");
             Bier = Content.Load<Texture2D>("Bier");
             geslaagd = Content.Load<Texture2D>("geslaagd");
-           
+
             arrowDown = Content.Load<Texture2D>("arrow-down");
             arrowUp = Content.Load<Texture2D>("arrow-up");
             arrowLeft = Content.Load<Texture2D>("arrow-left");
@@ -91,16 +91,16 @@ namespace SuperBeerWorld
             frame = Content.Load<Texture2D>("frame");
 
 
-            _0 = Content.Load<Texture2D>("numbers/_0");
-            _1 = Content.Load<Texture2D>("numbers/_1");
-            _2 = Content.Load<Texture2D>("numbers/_2");
-            _3 = Content.Load<Texture2D>("numbers/_3");
-            _4 = Content.Load<Texture2D>("numbers/_4");
-            _5 = Content.Load<Texture2D>("numbers/_5");
-            _6 = Content.Load<Texture2D>("numbers/_6");
-            _7 = Content.Load<Texture2D>("numbers/_7");
-            _8 = Content.Load<Texture2D>("numbers/_8");
-            _9 = Content.Load<Texture2D>("numbers/_9");
+            _0 = Content.Load<Texture2D>("numbers1/_0");
+            _1 = Content.Load<Texture2D>("numbers1/1");
+            _2 = Content.Load<Texture2D>("numbers1/_2");
+            _3 = Content.Load<Texture2D>("numbers1/_3");
+            _4 = Content.Load<Texture2D>("numbers1/_4");
+            _5 = Content.Load<Texture2D>("numbers1/_5");
+            _6 = Content.Load<Texture2D>("numbers1/_6");
+            _7 = Content.Load<Texture2D>("numbers1/_7");
+            _8 = Content.Load<Texture2D>("numbers1/_8");
+            _9 = Content.Load<Texture2D>("numbers1/_9");
         }
 
         protected override void UnloadContent() 
@@ -179,6 +179,9 @@ namespace SuperBeerWorld
             screenHeight = device.PresentationParameters.BackBufferHeight;
 
             //Draw alles
+
+            //(int)(screenWidth * 0.8f)
+
             spriteBatch.Draw(Background, new Rectangle(0, 0, (int)(screenWidth * 0.8f), screenHeight), Color.White);
             spriteBatch.Draw(ApBar, new Rectangle(50, 120, 320, 840), Color.White);
             spriteBatch.Draw(Bier, new Rectangle(197,hoogtePlaatje,145,procenten), Color.White);
