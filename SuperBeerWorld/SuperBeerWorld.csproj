@@ -151,9 +151,6 @@
     <Compile Include="GamePage.xaml.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Level.cs" />
-    <Compile Include="MiniGame1.xaml.cs">
-      <DependentUpon>MiniGame1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +173,7 @@
     <Content Include="Content\daniel-met-bier-2.png" />
     <Content Include="Content\Daniel-met-bier.png" />
     <Content Include="Content\FacebookButton.png" />
+    <Content Include="Content\geslaagd.png" />
     <Content Include="Content\numbers\_0.png" />
     <Content Include="Content\numbers\_1.png" />
     <Content Include="Content\numbers\_2.png" />
@@ -207,10 +205,6 @@
     <Page Include="GamePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MiniGame1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">

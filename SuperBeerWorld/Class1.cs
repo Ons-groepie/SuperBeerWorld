@@ -12,12 +12,15 @@ namespace SuperBeerWorld
 {
     class Class1 : Game
     {
+
         GraphicsDeviceManager graphics;
         GraphicsDevice device;
         SpriteBatch spriteBatch;
 
         Texture2D BierVast;
         Texture2D BierAanDeMond;
+
+        Texture2D geslaagd;
 
         Texture2D ApBar;
         Texture2D Bier;
@@ -38,6 +41,7 @@ namespace SuperBeerWorld
         KeyboardState oldState;
 
         bool isSpaceDown;
+        bool isDrunk;
 
         int Ap;
         int tijd;
@@ -51,6 +55,7 @@ namespace SuperBeerWorld
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             isSpaceDown = false;
+            isDrunk = false;
             Ap = 0;
             oldState = Keyboard.GetState();
         }
@@ -73,6 +78,7 @@ namespace SuperBeerWorld
             
             ApBar = Content.Load<Texture2D>("AP-bar");
             Bier = Content.Load<Texture2D>("Bier");
+            geslaagd = Content.Load<Texture2D>("geslaagd");
 
             _0 = Content.Load<Texture2D>("numbers/_0");
             _1 = Content.Load<Texture2D>("numbers/_1");
@@ -114,12 +120,19 @@ namespace SuperBeerWorld
 
             if (timer > TimeSpan.Zero)
                 timer -= gameTime.ElapsedGameTime;
-
             if (timer < TimeSpan.Zero && Ap >= 100)
             {
                 timer = TimeSpan.Zero;
+                isDrunk = true;
                 
-            } 
+            }
+            if (Ap >= 100)
+            {
+                isDrunk = true;
+            
+            }
+
+            
             base.Update(gameTime);
         }
 
@@ -127,7 +140,7 @@ namespace SuperBeerWorld
         {
             GraphicsDevice.Clear(Color.Red);
             int procenten = 800 / 100 * Ap;
-            int hoogtePlaatje = (800 - procenten) + 140;
+            int hoogtePlaatje = (805 - procenten) + 140;
 
             
             
@@ -151,6 +164,11 @@ namespace SuperBeerWorld
                 spriteBatch.Draw(BierAanDeMond, new Rectangle(1050, 508, 500, 500), Color.White);
             }
 
+            if (isDrunk == true)
+            {
+                spriteBatch.Draw(geslaagd, new Rectangle(538, 317, 844, 446), Color.White);
+            }
+           
             switch (tijd)
             {
                 case 1:
@@ -261,7 +279,7 @@ namespace SuperBeerWorld
                     spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
                     spriteBatch.Draw(_7, new Rectangle(1800, 50, 100, 100), Color.White);
                     break;
-                case 28:
+                case 28
                     spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
                     spriteBatch.Draw(_8, new Rectangle(1800, 50, 100, 100), Color.White);
                     break;
