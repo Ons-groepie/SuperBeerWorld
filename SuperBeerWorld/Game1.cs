@@ -107,6 +107,7 @@ namespace SuperBeerWorld
                     }
                     break;
                 case Screens.Settings:
+                    button.Visibility = Visibility.Collapsed;
                     break;
             }
 
