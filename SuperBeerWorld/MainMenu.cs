@@ -22,6 +22,7 @@ namespace SuperBeerWorld
         Texture2D startClick;
         Texture2D startClicked;
         Texture2D facebook;
+        Texture2D settings;
 
         // MouseState
         MouseState oldMouseState;
@@ -38,6 +39,7 @@ namespace SuperBeerWorld
             startClick = content.Load<Texture2D>("start-click");
             startClicked = content.Load<Texture2D>("start-clicked");
             facebook = content.Load<Texture2D>("FacebookButton");
+            settings = content.Load<Texture2D>("settings-button");
 
             this.screenWidth = screenWidth;
             this.screenHeight = screenHeight;
@@ -57,9 +59,16 @@ namespace SuperBeerWorld
             int startWidth = 400;
             int startHeight = 144;
 
+            
+            int settingWidth = 100;
+            int settingHeight= 100;
+            int settingPosX = screenWidth - 20 - settingWidth;
+            int settingPosY = 20;
             // Teken de sprites
             spriteBatch.Draw(background, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
+            spriteBatch.Draw(settings, new Rectangle(settingPosX, settingPosY, settingWidth, settingHeight), Color.White);
 
+            // start onclick and hover
             if (mouseState.X >= startPosX && mouseState.X <= startPosX + startWidth)
             {
                 if (mouseState.Y >= startPosY && mouseState.Y <= startPosY + startHeight)
@@ -87,6 +96,33 @@ namespace SuperBeerWorld
                 spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
             }
 
+            // settings onclick
+            if (mouseState.X >= settingPosX && mouseState.X <= settingPosX + settingWidth)
+            {
+                if (mouseState.Y >= settingPosY && mouseState.Y <= settingPosY + settingHeight)
+                {
+                    if (mouseState.LeftButton == ButtonState.Pressed)
+                    {
+                       
+                    }
+                    else
+                    {
+                       
+                    }
+                    if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
+                    {
+                        Game1.CurrentScreen = Game1.Screens.Settings;
+                    }
+                }
+                else
+                {
+                    spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+                }
+            }
+            else
+            {
+                spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+            }
 
 
             oldMouseState = mouseState;

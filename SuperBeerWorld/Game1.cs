@@ -37,6 +37,7 @@ namespace SuperBeerWorld
             Class1,
             Settings,
             MainMenu,
+          
         }
 
         public static Screens CurrentScreen { get; set; }
