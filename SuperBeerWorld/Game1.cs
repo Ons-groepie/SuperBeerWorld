@@ -13,7 +13,7 @@ namespace SuperBeerWorld
     /// This is the main type for your game.
     /// </summary>
     public class Game1 : Game
-    {
+    {   
         GraphicsDeviceManager graphics;
         GraphicsDevice device;
         SpriteBatch spriteBatch;
@@ -108,7 +108,7 @@ namespace SuperBeerWorld
                     if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
                     {
                         // Load other screen
-                        goToPage(typeof(Class1));
+                        
                     }
                 } 
                 else

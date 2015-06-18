@@ -8,38 +8,47 @@
     xmlns:facebookControls="using:Facebook.Client.Controls"
     mc:Ignorable="d">
 
-    <Grid>
-        <Grid Margin="20">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-
-            <!--user information-->
-            <StackPanel HorizontalAlignment="Right">
-                <TextBlock 
-                    HorizontalAlignment="Center"
-                    Text="{Binding CurrentUser.Name, ElementName=loginButton}" />
-            </StackPanel>
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
             <!--ContentPanel - place additional content here-->
-            <Grid x:Name="ContentPanel" 
-                    Grid.Row="1"
-                    Visibility="Collapsed">
-                <TextBlock FontSize="48" 
-                                HorizontalAlignment="Left" 
-                                VerticalAlignment="Center" 
-                                Text="welcome"/>
-            </Grid>
+            <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" Visibility="Collapsed">
+            <TextBlock FontSize="48" 
+                       Margin="630,0,0,400"
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" 
+                        Text="Welkom bij Super Beer World!"/>
+            <TextBlock FontSize="48" 
+                       Margin="0,100,0,300"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Text="Druk op start om te beginnen!"/>
+        </Grid>
+
+            <!--user information-->
+            <StackPanel 
+                Grid.Row="2"
+                Orientation="Horizontal"
+                HorizontalAlignment="Left"
+                Margin="5">
+                <TextBlock 
+                    Margin="10,0,0,0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Text="{Binding CurrentUser.Name, ElementName=loginButton}"/>
+            </StackPanel>
+            
 
             <!-- login control -->
-            <facebookControls:LoginButton 
+        <facebookControls:LoginButton 
                 x:Name="loginButton" 
                 Grid.Row="2" 
                 HorizontalAlignment="Left"
                 SessionStateChanged="OnSessionStateChanged" Width="400" Height="100" Margin="275,0,0,200" />
-        </Grid>
     </Grid>
 
 </SwapChainBackgroundPanel>
