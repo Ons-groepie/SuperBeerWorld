@@ -86,12 +86,7 @@ namespace SuperBeerWorld
             _9 = content.Load<Texture2D>("numbers1/_9");
         }
 
-        protected override void UnloadContent() 
-        {
-            // TODO: Unload any non ContentManager content here
-        }
-
-        public override void Update(GameTime gameTime)
+        public void Update(GameTime gameTime)
         {
            // TODO: Add your update logic here
             
