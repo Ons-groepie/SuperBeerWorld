@@ -53,8 +53,6 @@ namespace SuperBeerWorld
 
         int procenten;
         int hoogtePlaatje;
-        float BierBarHoogte;
-        float opvulling;
 
         public Class1(ContentManager content)
         {
@@ -62,7 +60,7 @@ namespace SuperBeerWorld
             //Content.RootDirectory = "Content";
             isSpaceDown = false;
             isDrunk = false;
-            Ap = 0;
+            Ap = 1;
             oldState = Keyboard.GetState();
 
             BierVast = content.Load<Texture2D>("Daniel-met-bier-2");
@@ -143,10 +141,9 @@ namespace SuperBeerWorld
             
             }
 
-            procenten = 800 / 100 * Ap;
-            hoogtePlaatje = (805 - procenten) + 140;
-            BierBarHoogte = hoogtePlaatje / 1920f;
-            opvulling = procenten / 1920f;
+            procenten = ((int)(screenHeight*0.750f) / 100) * Ap;
+            hoogtePlaatje = ((int)(screenHeight * 0.745f) - procenten) + (int)(screenHeight * 0.129f);
+
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch,GraphicsDevice device)
@@ -162,8 +159,8 @@ namespace SuperBeerWorld
             //(int)(screenWidth * 0.8f)
 
             spriteBatch.Draw(Background, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
-            spriteBatch.Draw(ApBar, new Rectangle((int)(screenWidth * 0.026f), (int)(screenHeight * 0.111f), (int)(screenWidth * 0.167f), (int)(screenHeight * 0.777f)), Color.White);
-            spriteBatch.Draw(Bier, new Rectangle((int)(screenWidth * 0.102f), (int)(screenHeight * BierBarHoogte), (int)(screenWidth * 0.075f), (int)(screenHeight * opvulling)), Color.White);
+            spriteBatch.Draw(ApBar, new Rectangle((int)(screenWidth * 0.024f), (int)(screenHeight * 0.111f), (int)(screenWidth * 0.168f), (int)(screenHeight * 0.777f)), Color.White);
+            spriteBatch.Draw(Bier, new Rectangle((int)(screenWidth * 0.102f), hoogtePlaatje, (int)(screenWidth * 0.075f), procenten), Color.White);
             if (isSpaceDown == false)
             {
                 spriteBatch.Draw(BierVast, new Rectangle((int)(screenWidth * 0.546f), (int)(screenHeight * 0.470f), (int)(screenWidth * 0.260f), (int)(screenHeight * 0.462f)), Color.White);
