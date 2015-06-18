@@ -21,7 +21,7 @@ namespace SuperBeerWorld
         Texture2D ApBar;
         Texture2D Bier;
 
-        //numbers
+        //Numbers
         Texture2D _0;
         Texture2D _1;
         Texture2D _2;
