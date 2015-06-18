@@ -7,16 +7,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using Microsoft.Xna.Framework.Content;
 
 namespace SuperBeerWorld
 {
-    public class Class1 : Game
+    public class Class1
     {
-
-        GraphicsDeviceManager graphics;
-        GraphicsDevice device;
-        SpriteBatch spriteBatch;
-
         Texture2D BierVast;
         Texture2D BierAanDeMond;
 
@@ -47,71 +43,53 @@ namespace SuperBeerWorld
         bool  isArrowUpPress, isArrowDownPress, isArrowLeftPress, isArrowRightPress;
         
 
-        int Ap;
+        int Ap; 
         int tijd;
         TimeSpan timer = new TimeSpan(0, 0, 30); //10 second
         // Vars
         int screenWidth;
         int screenHeight;
 
-        public Class1()
+        public Class1(ContentManager content)
         {
-            graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+            //graphics = new GraphicsDeviceManager(this);
+            //Content.RootDirectory = "Content";
             isSpaceDown = false;
             isDrunk = false;
             Ap = 0;
             oldState = Keyboard.GetState();
+
+            BierVast = content.Load<Texture2D>("Daniel-met-bier-2");
+            BierAanDeMond = content.Load<Texture2D>("Daniel-met-bier");
+            Background = content.Load<Texture2D>("background-kroeg");
+            ApBar = content.Load<Texture2D>("AP-bar");
+            Bier = content.Load<Texture2D>("Bier");
+
+            geslaagd = content.Load<Texture2D>("geslaagd");
+
+            arrowDown = content.Load<Texture2D>("arrow-down");
+            arrowUp = content.Load<Texture2D>("arrow-up");
+            arrowLeft = content.Load<Texture2D>("arrow-left");
+            arrowRight = content.Load<Texture2D>("arrow-right");
+            frame = content.Load<Texture2D>("frame");
+
+
+            _0 = content.Load<Texture2D>("numbers1/_0");
+            _1 = content.Load<Texture2D>("numbers1/_1");
+            _2 = content.Load<Texture2D>("numbers1/_2");
+            _3 = content.Load<Texture2D>("numbers1/_3");
+            _4 = content.Load<Texture2D>("numbers1/_4");
+            _5 = content.Load<Texture2D>("numbers1/_5");
+            _6 = content.Load<Texture2D>("numbers1/_6");
+            _7 = content.Load<Texture2D>("numbers1/_7");
+            _8 = content.Load<Texture2D>("numbers1/_8");
+            _9 = content.Load<Texture2D>("numbers1/_9");
         }
 
-        protected override void Initialize()
-        {
-            base.Initialize();
-        }
-
-        protected override void LoadContent()
-        {
-            // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-            device = graphics.GraphicsDevice;
-
-            BierVast=Content.Load<Texture2D>("Daniel-met-bier-2");
-            BierAanDeMond = Content.Load<Texture2D>("Daniel-met-bier");
-            
-            Background = Content.Load<Texture2D>("background-kroeg");
-            
-            ApBar = Content.Load<Texture2D>("AP-bar");
-            Bier = Content.Load<Texture2D>("Bier");
-            geslaagd = Content.Load<Texture2D>("geslaagd");
-
-            arrowDown = Content.Load<Texture2D>("arrow-down");
-            arrowUp = Content.Load<Texture2D>("arrow-up");
-            arrowLeft = Content.Load<Texture2D>("arrow-left");
-            arrowRight = Content.Load<Texture2D>("arrow-right");
-            frame = Content.Load<Texture2D>("frame");
-
-
-            _0 = Content.Load<Texture2D>("numbers1/_0");
-            _1 = Content.Load<Texture2D>("numbers1/_1");
-            _2 = Content.Load<Texture2D>("numbers1/_2");
-            _3 = Content.Load<Texture2D>("numbers1/_3");
-            _4 = Content.Load<Texture2D>("numbers1/_4");
-            _5 = Content.Load<Texture2D>("numbers1/_5");
-            _6 = Content.Load<Texture2D>("numbers1/_6");
-            _7 = Content.Load<Texture2D>("numbers1/_7");
-            _8 = Content.Load<Texture2D>("numbers1/_8");
-            _9 = Content.Load<Texture2D>("numbers1/_9");
-        }
-
-        protected override void UnloadContent() 
-        {
-            // TODO: Unload any non ContentManager content here
-        }
-
-        protected override void Update(GameTime gameTime)
+        public void Update(GameTime gameTime)
         {
            // TODO: Add your update logic here
-
+            
             tijd = (int)timer.TotalSeconds;
             var newState = Keyboard.GetState();
             if (newState.IsKeyDown(Keys.Space) && !oldState.IsKeyDown(Keys.Space))
@@ -119,8 +97,8 @@ namespace SuperBeerWorld
                 isSpaceDown = true;
                 if(Ap <= 100)
                 {
-                    Ap++;  
-                }
+                Ap++;               
+            }
                               
             }
             else if (newState.IsKeyUp(Keys.Space))
@@ -152,27 +130,18 @@ namespace SuperBeerWorld
                 timer = TimeSpan.Zero;
                 isDrunk = true;
                 
-            }
+            } 
             if (Ap >= 100)
             {
                 isDrunk = true;
             
             }
-
-            
-            base.Update(gameTime);
         }
 
-        protected override void Draw(GameTime gameTime)
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch,GraphicsDevice device)
         {
-            GraphicsDevice.Clear(Color.Red);
             int procenten = 800 / 100 * Ap;
             int hoogtePlaatje = (805 - procenten) + 140;
-
-            
-            
-            // Start de spriteBatch
-            spriteBatch.Begin();
 
             // Bepaal de schermresolutie
             screenWidth = device.PresentationParameters.BackBufferWidth;
@@ -183,7 +152,7 @@ namespace SuperBeerWorld
             //(int)(screenWidth * 0.8f)
 
             spriteBatch.Draw(Background, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
-            spriteBatch.Draw(ApBar, new Rectangle(50, 120, 320, 840), Color.White);
+            spriteBatch.Draw(ApBar, new Rectangle((int)(screenWidth * 0.026f), (int)(screenHeight * 0.111f), (int)(screenWidth * 0.167f), 840), Color.White);
             spriteBatch.Draw(Bier, new Rectangle(197,hoogtePlaatje,145,procenten), Color.White);
             if (isSpaceDown == false)
             {
@@ -324,12 +293,6 @@ namespace SuperBeerWorld
                 default:
                     break;
             }
-           
-            // End de spireBatch
-            spriteBatch.End();
-
-            base.Draw(gameTime);
          }
-
     }
 }

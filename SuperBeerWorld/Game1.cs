@@ -31,15 +31,27 @@ namespace SuperBeerWorld
         Texture2D startClicked;
         Texture2D facebook;
 
+        Class1 class1;
+
         // Vars
         int screenWidth;
         int screenHeight;
+
+        public enum Screens
+        {
+            Class1,
+            Settings,
+        }
+
+        public static Screens CurrentScreen { get; set; }
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             this.IsMouseVisible = true;
+            CurrentScreen = Screens.Class1;
+
         }
 
         protected override void Initialize()
@@ -49,7 +61,7 @@ namespace SuperBeerWorld
 
         protected override void LoadContent()
         {
-
+            class1 = new Class1(Content);
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             blank = Content.Load<Texture2D>("blank");
@@ -69,8 +81,17 @@ namespace SuperBeerWorld
 
         protected override void Update(GameTime gameTime)
         {
+            switch (CurrentScreen)
+            {
+                case Screens.Class1:
+                    class1.Update(gameTime);
+                    break;
+                case Screens.Settings:
+                    break;
+            }
+
             // TODO: Add your update logic here
-            mouseState = Mouse.GetState();
+           // mouseState = Mouse.GetState();
             base.Update(gameTime);
         }
 
@@ -78,55 +99,69 @@ namespace SuperBeerWorld
         {
             GraphicsDevice.Clear(Color.White);
 
-            // Start de spriteBatch
             spriteBatch.Begin();
-
-            // Bepaal de schermresolutie
-            screenWidth = device.PresentationParameters.BackBufferWidth;
-            screenHeight = device.PresentationParameters.BackBufferHeight;
-
-            int startPosX = 300;
-            int startPosY = 500;
-            int startWidth = 400;
-            int startHeight = 144;
-
-            // Teken de sprites
-            spriteBatch.Draw(background, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
-
-            if (mouseState.X >= startPosX && mouseState.X <= startPosX + startWidth)
+            switch (CurrentScreen)
             {
-                if (mouseState.Y >= startPosY && mouseState.Y <= startPosY + startHeight)
-                {
-                    if (mouseState.LeftButton == ButtonState.Pressed)
-                    {
-                        spriteBatch.Draw(startClick, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
-                    }
-                    else
-                    { 
-                        spriteBatch.Draw(startHover, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
-                    }
-                    if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
-                    {
-                        // Load other screen
-                        
-                    }
-                } 
-                else
-                {
-                    spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
-                }
+                case Screens.Class1:
+                    class1.Draw(gameTime, spriteBatch, device);
+                    break;
+                case Screens.Settings:
+                    break;
             }
-            else
-            {
-                spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
-            }
-
-
-
-            oldMouseState = mouseState;
-
-            // End de spireBatch
             spriteBatch.End();
+            
+            
+
+            //// Start de spriteBatch
+            //spriteBatch.Begin();
+
+            //// Bepaal de schermresolutie
+            //screenWidth = device.PresentationParameters.BackBufferWidth;
+            //screenHeight = device.PresentationParameters.BackBufferHeight;
+
+            //int startPosX = 300;
+            //int startPosY = 500;
+            //int startWidth = 400;
+            //int startHeight = 144;
+
+            //// Teken de sprites
+            //spriteBatch.Draw(background, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
+
+            //if (mouseState.X >= startPosX && mouseState.X <= startPosX + startWidth)
+            //{
+            //    if (mouseState.Y >= startPosY && mouseState.Y <= startPosY + startHeight)
+            //    {
+            //        if (mouseState.LeftButton == ButtonState.Pressed)
+            //        {
+            //            spriteBatch.Draw(startClick, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+            //        }
+            //        else
+            //        { 
+            //            spriteBatch.Draw(startHover, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+            //        }
+            //        if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
+            //        {
+            //            // Load other screen
+            //            spriteBatch.End();
+            //            goToPage();
+            //        }
+            //    } 
+            //    else
+            //    {
+            //        spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+            //    }
+            //}
+            //else
+            //{
+            //    spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+            //}
+
+
+
+            //oldMouseState = mouseState;
+
+            //// End de spireBatch
+            //spriteBatch.End();
 
             base.Draw(gameTime);
         }
