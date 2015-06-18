@@ -25,3 +25,9 @@
 /processorParam:Quality=Best
 /build:slikken.wav
 
+#begin GuusMeeuwis.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:GuusMeeuwis.mp3
+

@@ -28,7 +28,9 @@ namespace SuperBeerWorld
         MouseState oldMouseState;
 
         int screenWidth;
-        int screenHeight; 
+        int screenHeight;
+
+        public bool isPlayingMusic;
 
         public MainMenu(ContentManager content, int screenWidth, int screenHeight)
         {

@@ -26,7 +26,8 @@ namespace SuperBeerWorld
         Class1 class1;
         MainMenu mainmenu;
 
-        private Song backgroundMusic;
+        private Song backgroundMusic1;
+        private Song backgroundMusic2;
 
         // Vars
         int screenWidth;
@@ -62,7 +63,9 @@ namespace SuperBeerWorld
 
         protected override void LoadContent()
         {
-            backgroundMusic = Content.Load<Song>("background-music");
+
+            backgroundMusic1 = Content.Load<Song>("background-music");
+            backgroundMusic2 = Content.Load<Song>("GuusMeeuwis");
             
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -90,13 +93,18 @@ namespace SuperBeerWorld
                     button.Visibility = Visibility.Collapsed;
                     if (!class1.isPlayingMusic)
                     {
-                       MediaPlayer.Play(backgroundMusic);
+                       MediaPlayer.Play(backgroundMusic1);
                        class1.isPlayingMusic = true;
                     }
                     break;
                 case Screens.MainMenu:
                     mainmenu.Update(gameTime);
                     button.Visibility = Visibility.Visible;
+                    if (!mainmenu.isPlayingMusic)
+                    {
+                        MediaPlayer.Play(backgroundMusic2);
+                        mainmenu.isPlayingMusic = true;
+                    }
                     break;
                 case Screens.Settings:
                     break;
