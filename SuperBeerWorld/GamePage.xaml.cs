@@ -11,14 +11,21 @@ namespace SuperBeerWorld
     /// </summary>
     public sealed partial class GamePage : SwapChainBackgroundPanel
     {
-        readonly Class1 _game;
+        readonly Game1 _game;
+        readonly Class1 _class;
+        
 
         public GamePage(LaunchActivatedEventArgs args)
         {
-            this.InitializeComponent();
 
+            this.InitializeComponent();
+            
             // Create the game.
-            _game = XamlGame<Class1>.Create(args, Window.Current.CoreWindow, this);
+           
+            
+                _game = XamlGame<Game1>.Create(args, Window.Current.CoreWindow, this);
+            
+          
         }
 
         private void OnSessionStateChanged(object sender, Facebook.Client.Controls.SessionStateChangedEventArgs e)

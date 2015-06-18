@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace SuperBeerWorld
 {
-    class Class1 : Game
+    public class Class1 : Game
     {
         GraphicsDeviceManager graphics;
         GraphicsDevice device;
@@ -22,7 +22,10 @@ namespace SuperBeerWorld
 
         Texture2D Background;
 
-        bool isSpaceDown;
+        Texture2D arrowDown, arrowUp, arrowLeft, arrowRight, frame;
+
+        bool isSpaceDown, isArrowUpPress, isArrowDownPress, isArrowLeftPress, isArrowRightPress;
+        
 
         // Vars
         int screenWidth;
@@ -51,6 +54,11 @@ namespace SuperBeerWorld
             BierAanDeMond = Content.Load<Texture2D>("Daniel-met-bier");
             Background = Content.Load<Texture2D>("background-kroeg");
             ApBar = Content.Load<Texture2D>("AP-bar");
+            arrowDown = Content.Load<Texture2D>("arrow-down");
+            arrowUp = Content.Load<Texture2D>("arrow-up");
+            arrowLeft = Content.Load<Texture2D>("arrow-left");
+            arrowRight = Content.Load<Texture2D>("arrow-right");
+            frame = Content.Load<Texture2D>("frame");
         }
 
         protected override void UnloadContent() 
@@ -62,12 +70,21 @@ namespace SuperBeerWorld
         {
            // TODO: Add your update logic here
             KeyboardState keyboard = Keyboard.GetState();
-            if (keyboard.IsKeyDown(Keys.Space))
-            {
-                isSpaceDown = true;
-            }
-            else
-                isSpaceDown = false;
+            // spacebar pressed / not 
+            if (keyboard.IsKeyDown(Keys.Space)) {isSpaceDown = true;}
+            else { isSpaceDown = false;}
+            // arrow up pressed / not
+            if (keyboard.IsKeyDown(Keys.Up)) { isArrowUpPress = true; }
+            else { isArrowUpPress = false; }
+            // arrow down pressed / not
+            if (keyboard.IsKeyDown(Keys.Down)) { isArrowDownPress = true; }
+            else { isArrowDownPress = false; }
+            // arrow left pressed / not
+            if (keyboard.IsKeyDown(Keys.Left)) { isArrowLeftPress = true; }
+            else { isArrowLeftPress = false; }
+            // arrow right pressed / not
+            if (keyboard.IsKeyDown(Keys.Right)) { isArrowRightPress = true; }
+            else { isArrowRightPress = false; }
 
             base.Update(gameTime);
         }
