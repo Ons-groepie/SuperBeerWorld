@@ -92,7 +92,7 @@ namespace SuperBeerWorld
 
 
             _0 = Content.Load<Texture2D>("numbers1/_0");
-            _1 = Content.Load<Texture2D>("numbers1/1");
+            _1 = Content.Load<Texture2D>("numbers1/_1");
             _2 = Content.Load<Texture2D>("numbers1/_2");
             _3 = Content.Load<Texture2D>("numbers1/_3");
             _4 = Content.Load<Texture2D>("numbers1/_4");
