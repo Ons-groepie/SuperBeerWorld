@@ -150,8 +150,9 @@ namespace SuperBeerWorld
             // Bepaal de schermresolutie
             screenWidth = device.PresentationParameters.BackBufferWidth;
             screenHeight = device.PresentationParameters.BackBufferHeight;
+            
 
-            //Draw alles
+            //Draw alles            
             spriteBatch.Draw(Background, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
             spriteBatch.Draw(ApBar, new Rectangle(50, 120, 320, 840), Color.White);
             spriteBatch.Draw(Bier, new Rectangle(197,hoogtePlaatje,145,procenten), Color.White);
@@ -279,7 +280,7 @@ namespace SuperBeerWorld
                     spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
                     spriteBatch.Draw(_7, new Rectangle(1800, 50, 100, 100), Color.White);
                     break;
-                case 28
+                case 28:
                     spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
                     spriteBatch.Draw(_8, new Rectangle(1800, 50, 100, 100), Color.White);
                     break;
