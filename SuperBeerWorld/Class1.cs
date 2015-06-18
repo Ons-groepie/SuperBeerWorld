@@ -83,6 +83,13 @@ namespace SuperBeerWorld
             ApBar = Content.Load<Texture2D>("AP-bar");
             Bier = Content.Load<Texture2D>("Bier");
             geslaagd = Content.Load<Texture2D>("geslaagd");
+           
+            arrowDown = Content.Load<Texture2D>("arrow-down");
+            arrowUp = Content.Load<Texture2D>("arrow-up");
+            arrowLeft = Content.Load<Texture2D>("arrow-left");
+            arrowRight = Content.Load<Texture2D>("arrow-right");
+            frame = Content.Load<Texture2D>("frame");
+
 
             _0 = Content.Load<Texture2D>("numbers1/_0");
             _1 = Content.Load<Texture2D>("numbers1/_1");
