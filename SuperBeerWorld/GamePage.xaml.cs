@@ -20,15 +20,15 @@ namespace SuperBeerWorld
             this.InitializeComponent();
 
             // Create the game.
+            this.loginButton.Visibility = Visibility.Collapsed;
             _game = XamlGame<Game1>.Create(args, Window.Current.CoreWindow, this);
+            _game.Login(loginButton);
         }
 
         private void OnSessionStateChanged(object sender, Facebook.Client.Controls.SessionStateChangedEventArgs e)
         {
-            this.ContentPanel.Visibility = (e.SessionState == Facebook.Client.Controls.FacebookSessionState.Opened) ?
-                                Visibility.Visible : Visibility.Collapsed;
+            this.ContentPanel.Visibility = (e.SessionState == Facebook.Client.Controls.FacebookSessionState.Opened) ? Visibility.Visible : Visibility.Collapsed;
+            
         }
-
-
     }
 }

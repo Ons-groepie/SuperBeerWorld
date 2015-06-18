@@ -146,6 +146,7 @@
     </Compile>
     <Compile Include="Character.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Credits.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GamePage.xaml.cs" />
