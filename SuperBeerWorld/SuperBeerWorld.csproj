@@ -175,6 +175,7 @@
     <Content Include="Content\arrow-up.png" />
     <Content Include="Content\background-kroeg.png" />
     <Content Include="Content\background-main.jpg" />
+    <Content Include="Content\background-music.mp3" />
     <Content Include="Content\Bier.png" />
     <Content Include="Content\blank.png" />
     <Content Include="Content\daniel-met-bier-2.png" />

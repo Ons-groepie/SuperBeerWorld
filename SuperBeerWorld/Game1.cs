@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Facebook.Client.Controls;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperBeerWorld
 {
@@ -15,6 +16,7 @@ namespace SuperBeerWorld
     /// </summary>
     public class Game1 : Game
     {
+
         LoginButton button;
 
         GraphicsDeviceManager graphics;
@@ -23,6 +25,8 @@ namespace SuperBeerWorld
 
         Class1 class1;
         MainMenu mainmenu;
+
+        private Song backgroundMusic;
 
         // Vars
         int screenWidth;
@@ -57,6 +61,9 @@ namespace SuperBeerWorld
 
         protected override void LoadContent()
         {
+            backgroundMusic = Content.Load<Song>("background-music");
+            MediaPlayer.Play(backgroundMusic);
+
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             device = graphics.GraphicsDevice;
@@ -91,7 +98,6 @@ namespace SuperBeerWorld
             }
 
             // TODO: Add your update logic here
-           // mouseState = Mouse.GetState();
             base.Update(gameTime);
         }
 
@@ -114,24 +120,6 @@ namespace SuperBeerWorld
             spriteBatch.End();
          
             base.Draw(gameTime);
-        }
-
-        // Methode voor het navigeren tussen de pagina's
-        // Geruik als volgende: goToPage(typeof(NAAM_HIER_VAN_PAGINA));
-        public void goToPage(System.Type pageName)
-        {
-            var frame = new Frame();
-            frame.Navigate(pageName);
-            Windows.UI.Xaml.Window.Current.Content = frame;
-            Windows.UI.Xaml.Window.Current.Activate();
-        }
-
-        public void goToPage()
-        {
-            var frame = new Frame();
-            frame.Navigate(typeof(Game1));
-            Windows.UI.Xaml.Window.Current.Content = frame;
-            Windows.UI.Xaml.Window.Current.Activate();
         }
     }
 }
