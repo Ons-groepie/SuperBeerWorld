@@ -193,6 +193,7 @@
     <Content Include="Content\numbers1\_7.png" />
     <Content Include="Content\numbers1\_8.png" />
     <Content Include="Content\numbers1\_9.png" />
+    <Content Include="Content\slikken.wav" />
     <Content Include="Content\start-click.png" />
     <Content Include="Content\start-clicked.png" />
     <Content Include="Content\start-hover.png" />
