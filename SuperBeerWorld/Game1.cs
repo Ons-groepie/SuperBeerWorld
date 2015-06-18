@@ -6,6 +6,7 @@ using Windows.ApplicationModel.Activation;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Facebook.Client.Controls;
 
 namespace SuperBeerWorld
 {
@@ -13,7 +14,9 @@ namespace SuperBeerWorld
     /// This is the main type for your game.
     /// </summary>
     public class Game1 : Game
-    {   
+    {
+        LoginButton button;
+
         GraphicsDeviceManager graphics;
         GraphicsDevice device;
         SpriteBatch spriteBatch;
@@ -40,7 +43,11 @@ namespace SuperBeerWorld
             Content.RootDirectory = "Content";
             this.IsMouseVisible = true;
             CurrentScreen = Screens.MainMenu;
+        }
 
+        public void Login(LoginButton button)
+        {
+            this.button = button;
         }
 
         protected override void Initialize()
@@ -73,9 +80,11 @@ namespace SuperBeerWorld
             {
                 case Screens.Class1:
                     class1.Update(gameTime);
+                    button.Visibility = Visibility.Collapsed;
                     break;
                 case Screens.MainMenu:
                     mainmenu.Update(gameTime);
+                    button.Visibility = Visibility.Visible;
                     break;
                 case Screens.Settings:
                     break;
