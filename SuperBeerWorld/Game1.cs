@@ -97,6 +97,8 @@ namespace SuperBeerWorld
 
         protected override void Draw(GameTime gameTime)
         {
+            GraphicsDevice.Clear(Color.White);
+
             spriteBatch.Begin();
             switch (CurrentScreen)
             {
@@ -108,7 +110,7 @@ namespace SuperBeerWorld
             }
             spriteBatch.End();
             
-            GraphicsDevice.Clear(Color.White);
+            
 
             //// Start de spriteBatch
             //spriteBatch.Begin();
