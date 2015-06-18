@@ -7,16 +7,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using Microsoft.Xna.Framework.Content;
 
 namespace SuperBeerWorld
 {
-    class Class1 : Game
+    class Class1
     {
-
-        GraphicsDeviceManager graphics;
-        GraphicsDevice device;
-        SpriteBatch spriteBatch;
-
         Texture2D BierVast;
         Texture2D BierAanDeMond;
 
@@ -36,38 +32,22 @@ namespace SuperBeerWorld
         int screenWidth;
         int screenHeight;
 
-        public Class1()
+        public Class1(ContentManager content)
         {
-            graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+            //graphics = new GraphicsDeviceManager(this);
+            //Content.RootDirectory = "Content";
             isSpaceDown = false;
             Ap = 0;
             oldState = Keyboard.GetState();
+
+            BierVast = content.Load<Texture2D>("Daniel-met-bier-2");
+            BierAanDeMond = content.Load<Texture2D>("Daniel-met-bier");
+            Background = content.Load<Texture2D>("background-kroeg");
+            ApBar = content.Load<Texture2D>("AP-bar");
+            Bier = content.Load<Texture2D>("Bier");
         }
 
-        protected override void Initialize()
-        {
-            base.Initialize();
-        }
-
-        protected override void LoadContent()
-        {
-            // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-            device = graphics.GraphicsDevice;
-            BierVast=Content.Load<Texture2D>("Daniel-met-bier-2");
-            BierAanDeMond = Content.Load<Texture2D>("Daniel-met-bier");
-            Background = Content.Load<Texture2D>("background-kroeg");
-            ApBar = Content.Load<Texture2D>("AP-bar");
-            Bier = Content.Load<Texture2D>("Bier");
-        }
-
-        protected override void UnloadContent() 
-        {
-            // TODO: Unload any non ContentManager content here
-        }
-
-        protected override void Update(GameTime gameTime)
+        public void Update(GameTime gameTime)
         {
            // TODO: Add your update logic here
             
@@ -90,20 +70,13 @@ namespace SuperBeerWorld
             {
                 timer = TimeSpan.Zero;
                 
-            } 
-            base.Update(gameTime);
+            }
         }
 
-        protected override void Draw(GameTime gameTime)
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch,GraphicsDevice device)
         {
-            GraphicsDevice.Clear(Color.Red);
             int procenten = 800 / 100 * Ap;
             int hoogtePlaatje = (800 - procenten) + 140;
-
-
-            
-            // Start de spriteBatch
-            spriteBatch.Begin();
 
             // Bepaal de schermresolutie
             screenWidth = device.PresentationParameters.BackBufferWidth;
@@ -121,12 +94,6 @@ namespace SuperBeerWorld
             {
                 spriteBatch.Draw(BierAanDeMond, new Rectangle(1050, 508, 500, 500), Color.White);
             }
-           
-            // End de spireBatch
-            spriteBatch.End();
-
-            base.Draw(gameTime);
          }
-
     }
 }
