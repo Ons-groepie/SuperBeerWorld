@@ -84,21 +84,16 @@ namespace SuperBeerWorld
             Bier = Content.Load<Texture2D>("Bier");
             geslaagd = Content.Load<Texture2D>("geslaagd");
 
-            _0 = Content.Load<Texture2D>("numbers/_0");
-            _1 = Content.Load<Texture2D>("numbers/_1");
-            _2 = Content.Load<Texture2D>("numbers/_2");
-            _3 = Content.Load<Texture2D>("numbers/_3");
-            _4 = Content.Load<Texture2D>("numbers/_4");
-            _5 = Content.Load<Texture2D>("numbers/_5");
-            _6 = Content.Load<Texture2D>("numbers/_6");
-            _7 = Content.Load<Texture2D>("numbers/_7");
-            _8 = Content.Load<Texture2D>("numbers/_8");
-            _9 = Content.Load<Texture2D>("numbers/_9");
-            arrowDown = Content.Load<Texture2D>("arrow-down");
-            arrowUp = Content.Load<Texture2D>("arrow-up");
-            arrowLeft = Content.Load<Texture2D>("arrow-left");
-            arrowRight = Content.Load<Texture2D>("arrow-right");
-            frame = Content.Load<Texture2D>("frame");
+            _0 = Content.Load<Texture2D>("numbers1/_0");
+            _1 = Content.Load<Texture2D>("numbers1/_1");
+            _2 = Content.Load<Texture2D>("numbers1/_2");
+            _3 = Content.Load<Texture2D>("numbers1/_3");
+            _4 = Content.Load<Texture2D>("numbers1/_4");
+            _5 = Content.Load<Texture2D>("numbers1/_5");
+            _6 = Content.Load<Texture2D>("numbers1/_6");
+            _7 = Content.Load<Texture2D>("numbers1/_7");
+            _8 = Content.Load<Texture2D>("numbers1/_8");
+            _9 = Content.Load<Texture2D>("numbers1/_9");
         }
 
         protected override void UnloadContent() 
@@ -177,7 +172,7 @@ namespace SuperBeerWorld
             screenHeight = device.PresentationParameters.BackBufferHeight;
 
             //Draw alles
-            spriteBatch.Draw(Background, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
+            spriteBatch.Draw(Background, new Rectangle(0, 0, (int)(screenWidth * 0.8f), screenHeight), Color.White);
             spriteBatch.Draw(ApBar, new Rectangle(50, 120, 320, 840), Color.White);
             spriteBatch.Draw(Bier, new Rectangle(197,hoogtePlaatje,145,procenten), Color.White);
             if (isSpaceDown == false)
@@ -188,7 +183,7 @@ namespace SuperBeerWorld
             {
                 spriteBatch.Draw(BierAanDeMond, new Rectangle(1050, 508, 500, 500), Color.White);
             }
-           
+
             if (isDrunk == true)
             {
                 spriteBatch.Draw(geslaagd, new Rectangle(538, 317, 844, 446), Color.White);
@@ -304,7 +299,7 @@ namespace SuperBeerWorld
                     spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
                     spriteBatch.Draw(_7, new Rectangle(1800, 50, 100, 100), Color.White);
                     break;
-                case 28
+                case 28:
                     spriteBatch.Draw(_2, new Rectangle(1750, 50, 100, 100), Color.White);
                     spriteBatch.Draw(_8, new Rectangle(1800, 50, 100, 100), Color.White);
                     break;
