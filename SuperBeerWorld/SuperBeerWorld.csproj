@@ -174,16 +174,16 @@
     <Content Include="Content\Daniel-met-bier.png" />
     <Content Include="Content\FacebookButton.png" />
     <Content Include="Content\geslaagd.png" />
-    <Content Include="Content\numbers\_0.png" />
-    <Content Include="Content\numbers\_1.png" />
-    <Content Include="Content\numbers\_2.png" />
-    <Content Include="Content\numbers\_3.png" />
-    <Content Include="Content\numbers\_4.png" />
-    <Content Include="Content\numbers\_5.png" />
-    <Content Include="Content\numbers\_6.png" />
-    <Content Include="Content\numbers\_7.png" />
-    <Content Include="Content\numbers\_8.png" />
-    <Content Include="Content\numbers\_9.png" />
+    <Content Include="Content\numbers1\_0.png" />
+    <Content Include="Content\numbers1\_1.png" />
+    <Content Include="Content\numbers1\_2.png" />
+    <Content Include="Content\numbers1\_3.png" />
+    <Content Include="Content\numbers1\_4.png" />
+    <Content Include="Content\numbers1\_5.png" />
+    <Content Include="Content\numbers1\_6.png" />
+    <Content Include="Content\numbers1\_7.png" />
+    <Content Include="Content\numbers1\_8.png" />
+    <Content Include="Content\numbers1\_9.png" />
     <Content Include="Content\start-click.png" />
     <Content Include="Content\start-clicked.png" />
     <Content Include="Content\start-hover.png" />
@@ -207,6 +207,7 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
