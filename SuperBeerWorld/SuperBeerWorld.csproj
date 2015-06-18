@@ -151,6 +151,7 @@
     <Compile Include="GamePage.xaml.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Level.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
