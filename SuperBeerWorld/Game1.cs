@@ -25,6 +25,7 @@ namespace SuperBeerWorld
 
         Class1 class1;
         MainMenu mainmenu;
+        Settings settings;
 
         private Song backgroundMusic1;
         private Song backgroundMusic2;
@@ -77,6 +78,7 @@ namespace SuperBeerWorld
 
             mainmenu = new MainMenu(Content,screenWidth,screenHeight);
             class1 = new Class1(Content);
+            settings = new Settings(Content, screenWidth, screenHeight);
         }
 
         protected override void UnloadContent()
@@ -129,6 +131,7 @@ namespace SuperBeerWorld
                     mainmenu.Draw(spriteBatch, device, mouseState);
                     break;
                 case Screens.Settings:
+                    settings.Draw(spriteBatch, device, mouseState);
                     break;
             }
             spriteBatch.End();

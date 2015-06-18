@@ -21,7 +21,7 @@ namespace SuperBeerWorld
         Texture2D startHover;
         Texture2D startClick;
         Texture2D startClicked;
-        Texture2D facebook;
+       
 
         // MouseState
         MouseState oldMouseState;
