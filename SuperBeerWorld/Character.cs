@@ -8,7 +8,7 @@ namespace SuperBeerWorld
 {
     class Character
     {
-        String naam;
+        String naam; 
         String character;
         int AP;
         int levens;

@@ -25,9 +25,12 @@
       </m2:VisualElements>
       <Extensions>
         <Extension Category="windows.protocol">
-          <Protocol Name="fb1446323225671539" />
+          <Protocol Name="fb" />
         </Extension>
       </Extensions>
+      <ApplicationContentUriRules>
+        <Rule Match="https://feestmienjong.nl/biergame/" Type="include" />
+      </ApplicationContentUriRules>
     </Application>
   </Applications>
   <Capabilities>

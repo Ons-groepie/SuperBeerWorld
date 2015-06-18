@@ -13,7 +13,7 @@ namespace SuperBeerWorld
     /// This is the main type for your game.
     /// </summary>
     public class Game1 : Game
-    {
+    {   
         GraphicsDeviceManager graphics;
         GraphicsDevice device;
         SpriteBatch spriteBatch;
@@ -108,8 +108,7 @@ namespace SuperBeerWorld
                     if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
                     {
                         // Load other screen
-                     
-                        goToPage(typeof(MiniGame1));
+                        
                     }
                 } 
                 else
@@ -134,9 +133,8 @@ namespace SuperBeerWorld
 
         // Methode voor het navigeren tussen de pagina's
         // Geruik als volgende: goToPage(typeof(NAAM_HIER_VAN_PAGINA));
-        public void goToPage( System.Type pageName)
+        public void goToPage(System.Type pageName)
         {
-            
             var frame = new Frame();
             frame.Navigate(pageName);
             Windows.UI.Xaml.Window.Current.Content = frame;
@@ -150,7 +148,5 @@ namespace SuperBeerWorld
             Windows.UI.Xaml.Window.Current.Content = frame;
             Windows.UI.Xaml.Window.Current.Activate();
         }
-
-       
     }
 }

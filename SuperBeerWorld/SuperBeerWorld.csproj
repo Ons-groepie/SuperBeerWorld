@@ -151,9 +151,6 @@
     <Compile Include="GamePage.xaml.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Level.cs" />
-    <Compile Include="MiniGame1.xaml.cs">
-      <DependentUpon>MiniGame1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -175,10 +172,22 @@
     <Content Include="Content\arrow-up.png" />
     <Content Include="Content\background-kroeg.png" />
     <Content Include="Content\background-main.jpg" />
+    <Content Include="Content\Bier.png" />
     <Content Include="Content\blank.png" />
     <Content Include="Content\daniel-met-bier-2.png" />
     <Content Include="Content\Daniel-met-bier.png" />
     <Content Include="Content\FacebookButton.png" />
+    <Content Include="Content\geslaagd.png" />
+    <Content Include="Content\numbers\_0.png" />
+    <Content Include="Content\numbers\_1.png" />
+    <Content Include="Content\numbers\_2.png" />
+    <Content Include="Content\numbers\_3.png" />
+    <Content Include="Content\numbers\_4.png" />
+    <Content Include="Content\numbers\_5.png" />
+    <Content Include="Content\numbers\_6.png" />
+    <Content Include="Content\numbers\_7.png" />
+    <Content Include="Content\numbers\_8.png" />
+    <Content Include="Content\numbers\_9.png" />
     <Content Include="Content\frame.png" />
     <Content Include="Content\start-click.png" />
     <Content Include="Content\start-clicked.png" />
@@ -201,10 +210,6 @@
     <Page Include="GamePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MiniGame1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
