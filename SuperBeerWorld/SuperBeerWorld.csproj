@@ -166,6 +166,10 @@
     <Content Include="Assets\splashscreenbier.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Content\AP-bar.png" />
+    <Content Include="Content\arrow-down.png" />
+    <Content Include="Content\arrow-left.png" />
+    <Content Include="Content\arrow-right.png" />
+    <Content Include="Content\arrow-up.png" />
     <Content Include="Content\background-kroeg.png" />
     <Content Include="Content\background-main.jpg" />
     <Content Include="Content\Bier.png" />
@@ -173,7 +177,18 @@
     <Content Include="Content\daniel-met-bier-2.png" />
     <Content Include="Content\Daniel-met-bier.png" />
     <Content Include="Content\FacebookButton.png" />
+    <Content Include="Content\frame.png" />
     <Content Include="Content\geslaagd.png" />
+    <Content Include="Content\numbers1\_0.png" />
+    <Content Include="Content\numbers1\_1.png" />
+    <Content Include="Content\numbers1\_2.png" />
+    <Content Include="Content\numbers1\_3.png" />
+    <Content Include="Content\numbers1\_4.png" />
+    <Content Include="Content\numbers1\_5.png" />
+    <Content Include="Content\numbers1\_6.png" />
+    <Content Include="Content\numbers1\_7.png" />
+    <Content Include="Content\numbers1\_8.png" />
+    <Content Include="Content\numbers1\_9.png" />
     <Content Include="Content\start-click.png" />
     <Content Include="Content\start-clicked.png" />
     <Content Include="Content\start-hover.png" />
@@ -197,6 +212,7 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

@@ -14,6 +14,8 @@ namespace SuperBeerWorld
     /// </summary>
     sealed partial class App : Application
     {
+      
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -32,7 +34,8 @@ namespace SuperBeerWorld
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
-            var gamePage = Window.Current.Content as GamePage;
+            
+                var gamePage = Window.Current.Content as GamePage;
             
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -52,7 +55,8 @@ namespace SuperBeerWorld
             }
 
             Window.Current.Activate();
-
+            
+           
         }
 
         /// <summary>
@@ -83,5 +87,7 @@ namespace SuperBeerWorld
             // here the authentication succeeded callback will be received.
             // put your login logic here
         }
+
+       
     }
 }
