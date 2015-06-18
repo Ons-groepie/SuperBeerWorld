@@ -182,7 +182,7 @@ namespace SuperBeerWorld
 
             //(int)(screenWidth * 0.8f)
 
-            spriteBatch.Draw(Background, new Rectangle(0, 0, (int)(screenWidth * 0.8f), screenHeight), Color.White);
+            spriteBatch.Draw(Background, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
             spriteBatch.Draw(ApBar, new Rectangle(50, 120, 320, 840), Color.White);
             spriteBatch.Draw(Bier, new Rectangle(197,hoogtePlaatje,145,procenten), Color.White);
             if (isSpaceDown == false)
