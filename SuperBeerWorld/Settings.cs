@@ -16,12 +16,8 @@ namespace SuperBeerWorld
         Texture2D blank;
         Texture2D background;
 
-        // Start buttons
-        Texture2D startNormal;
-        Texture2D startHover;
-        Texture2D startClick;
-        Texture2D startClicked;
-        Texture2D facebook;
+       
+       
 
         // MouseState
         MouseState oldMouseState;
@@ -33,10 +29,7 @@ namespace SuperBeerWorld
         {
             blank = content.Load<Texture2D>("blank");
             background = content.Load<Texture2D>("background-main");
-            startNormal = content.Load<Texture2D>("start-normal");
-            startHover = content.Load<Texture2D>("start-hover");
-            startClick = content.Load<Texture2D>("start-click");
-            startClicked = content.Load<Texture2D>("start-clicked");
+            
            
 
             this.screenWidth = screenWidth;
@@ -51,7 +44,7 @@ namespace SuperBeerWorld
 
         public void Draw(SpriteBatch spriteBatch, GraphicsDevice device, MouseState mouseState)
         {
-       
+
             int startPosX = 300;
             int startPosY = 500;
             int startWidth = 400;
@@ -86,7 +79,6 @@ namespace SuperBeerWorld
             {
                 spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
             }
-
 
 
             oldMouseState = mouseState;

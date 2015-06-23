@@ -200,6 +200,8 @@
     <Content Include="Content\start-clicked.png" />
     <Content Include="Content\start-hover.png" />
     <Content Include="Content\start-normal.png" />
+    <Content Include="Content\volume-off.png" />
+    <Content Include="Content\volume-on.png" />
     <Content Include="FacebookConfig.xml" />
   </ItemGroup>
   <ItemGroup>
