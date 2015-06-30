@@ -53,32 +53,32 @@ namespace SuperBeerWorld
             // Teken de sprites
             spriteBatch.Draw(background, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
 
-            if (mouseState.X >= startPosX && mouseState.X <= startPosX + startWidth)
-            {
-                if (mouseState.Y >= startPosY && mouseState.Y <= startPosY + startHeight)
-                {
-                    if (mouseState.LeftButton == ButtonState.Pressed)
-                    {
-                        spriteBatch.Draw(startClick, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
-                    }
-                    else
-                    {
-                        spriteBatch.Draw(startHover, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
-                    }
-                    if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
-                    {
-                        Game1.CurrentScreen = Game1.Screens.Class1;
-                    }
-                }
-                else
-                {
-                    spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
-                }
-            }
-            else
-            {
-                spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
-            }
+            //if (mouseState.X >= startPosX && mouseState.X <= startPosX + startWidth)
+            //{
+            //    if (mouseState.Y >= startPosY && mouseState.Y <= startPosY + startHeight)
+            //    {
+            //        if (mouseState.LeftButton == ButtonState.Pressed)
+            //        {
+            //            spriteBatch.Draw(startClick, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+            //        }
+            //        else
+            //        {
+            //            spriteBatch.Draw(startHover, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+            //        }
+            //        if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
+            //        {
+            //            Game1.CurrentScreen = Game1.Screens.Class1;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+            //    }
+            //}
+            //else
+            //{
+            //    spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+            //}
 
 
             oldMouseState = mouseState;
