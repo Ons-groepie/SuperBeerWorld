@@ -95,7 +95,7 @@ namespace SuperBeerWorld
                     button.Visibility = Visibility.Collapsed;
                     if (!class1.isPlayingMusic)
                     {
-                       MediaPlayer.Play(backgroundMusic1);
+                       //MediaPlayer.Play(backgroundMusic1);
                        class1.isPlayingMusic = true;
                     }
                     break;
@@ -104,7 +104,7 @@ namespace SuperBeerWorld
                     button.Visibility = Visibility.Visible;
                     if (!mainmenu.isPlayingMusic)
                     {
-                        MediaPlayer.Play(backgroundMusic2);
+                        //MediaPlayer.Play(backgroundMusic2);
                         mainmenu.isPlayingMusic = true;
                     }
                     break;

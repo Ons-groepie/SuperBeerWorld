@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Audio;
+using System.Diagnostics;
 
 namespace SuperBeerWorld
 {
@@ -53,7 +54,6 @@ namespace SuperBeerWorld
         int screenWidth;
         int screenHeight;
 
-
         int procenten;
         int hoogtePlaatje;
 
@@ -82,7 +82,6 @@ namespace SuperBeerWorld
             arrowRight = content.Load<Texture2D>("arrow-right");
             frame = content.Load<Texture2D>("frame");
 
-
             _0 = content.Load<Texture2D>("numbers1/_0");
             _1 = content.Load<Texture2D>("numbers1/_1");
             _2 = content.Load<Texture2D>("numbers1/_2");
@@ -98,7 +97,6 @@ namespace SuperBeerWorld
         public void Update(GameTime gameTime)
         {
            // TODO: Add your update logic here
-            
             tijd = (int)timer.TotalSeconds;
             var newState = Keyboard.GetState();
             if (newState.IsKeyDown(Keys.Space) && !oldState.IsKeyDown(Keys.Space))
@@ -107,8 +105,8 @@ namespace SuperBeerWorld
                 if(Ap <= 100)
                 {
                 Ap++;
-                //effect.Play();
-            }
+                effect.Play();
+                }
                               
             }
             else if (newState.IsKeyUp(Keys.Space))
@@ -138,24 +136,19 @@ namespace SuperBeerWorld
             if (timer < TimeSpan.Zero && Ap >= 100)
             {
                 timer = TimeSpan.Zero;
-                isDrunk = true;
-                
+                isDrunk = true;                
             } 
             if (Ap >= 100)
             {
                 isDrunk = true;
-            
             }
 
-            procenten = ((int)(screenHeight*0.750f) / 100) * Ap;
+            procenten = ((int)(screenHeight*0.770f) / 100) * Ap;
             hoogtePlaatje = ((int)(screenHeight * 0.745f) - procenten) + (int)(screenHeight * 0.129f);
-
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch,GraphicsDevice device)
         {
-
-
             // Bepaal de schermresolutie
             screenWidth = device.PresentationParameters.BackBufferWidth;
             screenHeight = device.PresentationParameters.BackBufferHeight;
@@ -180,7 +173,7 @@ namespace SuperBeerWorld
             {
                 spriteBatch.Draw(geslaagd, new Rectangle((int)(screenWidth * 0.280f), (int)(screenHeight * 0.293f), (int)(screenWidth * 0.439f), (int)(screenHeight * 0.412f)), Color.White);
             }
-           
+
             switch (tijd)
             {
                 case 1:
