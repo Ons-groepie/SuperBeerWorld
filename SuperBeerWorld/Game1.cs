@@ -23,8 +23,8 @@ namespace SuperBeerWorld
         GraphicsDevice device;
         SpriteBatch spriteBatch;
 
-        public Class1 class1;
-        public MainMenu mainmenu;
+        Class1 class1;
+        MainMenu mainmenu;
         Settings settings;
 
         private Song backgroundMusic1;

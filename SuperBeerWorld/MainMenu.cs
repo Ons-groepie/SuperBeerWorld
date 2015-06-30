@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SuperBeerWorld
 {
-    public class MainMenu
+    class MainMenu
     {
         // Background
         Texture2D blank;

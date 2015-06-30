@@ -10,14 +10,13 @@ using System.Threading.Tasks;
 
 namespace SuperBeerWorld
 {
-    public class Settings
+    class Settings
     {
         // Background
         Texture2D blank;
         Texture2D background;
-        Texture2D musicOn;
-        Texture2D musicOff;
-        Game1 game;
+
+       
        
 
         // MouseState
@@ -30,9 +29,9 @@ namespace SuperBeerWorld
         {
             blank = content.Load<Texture2D>("blank");
             background = content.Load<Texture2D>("background-main");
-            musicOn = content.Load<Texture2D>("volume-on");
-            musicOff = content.Load<Texture2D>("volume-off");
-            game = new Game1();
+            
+           
+
             this.screenWidth = screenWidth;
             this.screenHeight = screenHeight;
            
@@ -46,74 +45,40 @@ namespace SuperBeerWorld
         public void Draw(SpriteBatch spriteBatch, GraphicsDevice device, MouseState mouseState)
         {
 
-            int musicPosX = 300;
-            int musicPosY = 500;
-            int musicWidth = 400;
-            int musicHeight = 144;
+            int startPosX = 300;
+            int startPosY = 500;
+            int startWidth = 400;
+            int startHeight = 144;
 
             // Teken de sprites
             spriteBatch.Draw(background, new Rectangle(0, 0, screenWidth, screenHeight), Color.White);
 
-            //if (mouseState.X >= musicPosX && mouseState.X <= musicPosX + musicWidth)
-            //{
-            //    if (mouseState.Y >= musicPosY && mouseState.Y <= musicPosY + musicHeight)
-            //    {
-            //        if (mouseState.LeftButton == ButtonState.Pressed)
-            //        {
-            //            if (game.mainmenu.isPlayingMusic == true) { 
-            //                spriteBatch.Draw(musicOn, new Rectangle(musicPosX, musicPosY, musicWidth, musicHeight), Color.White);
-            //            }
-            //            else
-            //            {
-            //                spriteBatch.Draw(musicOff, new Rectangle(musicPosX, musicPosY, musicWidth, musicHeight), Color.White);
-            //            }
-            //        }
-            //        else
-            //        {
-            //            if (game.mainmenu.isPlayingMusic == true)
-            //            {
-            //                spriteBatch.Draw(musicOn, new Rectangle(musicPosX, musicPosY, musicWidth, musicHeight), Color.White);
-            //            }
-            //            else
-            //            {
-            //                spriteBatch.Draw(musicOff, new Rectangle(musicPosX, musicPosY, musicWidth, musicHeight), Color.White);
-            //            }
-            //        }
-            //        if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
-            //        {
-            //            if(game.mainmenu.isPlayingMusic == true)
-            //            {
-            //                game.mainmenu.isPlayingMusic = false;
-            //            }
-            //            else
-            //            {
-            //                game.mainmenu.isPlayingMusic = true;
-            //            }
-            //        }
-            //    }
-            //    else
-            //    {
-            //        if (game.mainmenu.isPlayingMusic == true)
-            //        {
-            //            spriteBatch.Draw(musicOn, new Rectangle(musicPosX, musicPosY, musicWidth, musicHeight), Color.White);
-            //        }
-            //        else
-            //        {
-            //            spriteBatch.Draw(musicOff, new Rectangle(musicPosX, musicPosY, musicWidth, musicHeight), Color.White);
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    if (game.mainmenu.isPlayingMusic == true)
-            //    {
-            //        spriteBatch.Draw(musicOn, new Rectangle(musicPosX, musicPosY, musicWidth, musicHeight), Color.White);
-            //    }
-            //    else
-            //    {
-            //        spriteBatch.Draw(musicOff, new Rectangle(musicPosX, musicPosY, musicWidth, musicHeight), Color.White);
-            //    }
-            //}
+            if (mouseState.X >= startPosX && mouseState.X <= startPosX + startWidth)
+            {
+                if (mouseState.Y >= startPosY && mouseState.Y <= startPosY + startHeight)
+                {
+                    if (mouseState.LeftButton == ButtonState.Pressed)
+                    {
+                        spriteBatch.Draw(startClick, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+                    }
+                    else
+                    {
+                        spriteBatch.Draw(startHover, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+                    }
+                    if (oldMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
+                    {
+                        Game1.CurrentScreen = Game1.Screens.Class1;
+                    }
+                }
+                else
+                {
+                    spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+                }
+            }
+            else
+            {
+                spriteBatch.Draw(startNormal, new Rectangle(startPosX, startPosY, startWidth, startHeight), Color.White);
+            }
 
 
             oldMouseState = mouseState;
