@@ -10,6 +10,7 @@ using System;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Audio;
 using System.Diagnostics;
+using Microsoft.Xna.Framework.Media;
 
 namespace SuperBeerWorld
 {
@@ -39,6 +40,9 @@ namespace SuperBeerWorld
 
         Texture2D Background;
         KeyboardState oldState;
+
+
+        private Song backgroundMusic1;
 
         bool isSpaceDown;
         bool isDrunk;
@@ -92,6 +96,8 @@ namespace SuperBeerWorld
             _7 = content.Load<Texture2D>("numbers1/_7");
             _8 = content.Load<Texture2D>("numbers1/_8");
             _9 = content.Load<Texture2D>("numbers1/_9");
+
+            backgroundMusic1 = content.Load<Song>("background-music");
         }
 
         public void Update(GameTime gameTime)
@@ -145,10 +151,14 @@ namespace SuperBeerWorld
 
             procenten = ((int)(screenHeight*0.770f) / 100) * Ap;
             hoogtePlaatje = ((int)(screenHeight * 0.745f) - procenten) + (int)(screenHeight * 0.129f);
+
+
+           
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch,GraphicsDevice device)
         {
+           
             // Bepaal de schermresolutie
             screenWidth = device.PresentationParameters.BackBufferWidth;
             screenHeight = device.PresentationParameters.BackBufferHeight;

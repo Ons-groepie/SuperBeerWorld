@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,9 @@ namespace SuperBeerWorld
         Texture2D facebook;
         Texture2D settings;
 
+        // music
+        private Song backgroundMusic2;
+
         // MouseState
         MouseState oldMouseState;
 
@@ -45,12 +49,12 @@ namespace SuperBeerWorld
 
             this.screenWidth = screenWidth;
             this.screenHeight = screenHeight;
-           
+            backgroundMusic2 = content.Load<Song>("GuusMeeuwis");
         }
 
         public void Update(GameTime gameTime)
         {
-
+           
         }
 
         public void Draw(SpriteBatch spriteBatch, GraphicsDevice device, MouseState mouseState)

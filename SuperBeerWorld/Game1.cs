@@ -23,8 +23,8 @@ namespace SuperBeerWorld
         GraphicsDevice device;
         SpriteBatch spriteBatch;
 
-        Class1 class1;
-        MainMenu mainmenu;
+         Class1 class1;
+         MainMenu mainmenu;
         Settings settings;
 
         private Song backgroundMusic1;
@@ -64,7 +64,7 @@ namespace SuperBeerWorld
 
         protected override void LoadContent()
         {
-
+            
             backgroundMusic1 = Content.Load<Song>("background-music");
             backgroundMusic2 = Content.Load<Song>("GuusMeeuwis");
             
@@ -78,7 +78,10 @@ namespace SuperBeerWorld
 
             mainmenu = new MainMenu(Content,screenWidth,screenHeight);
             class1 = new Class1(Content);
-            settings = new Settings(Content, screenWidth, screenHeight);
+            settings = new Settings(Content, screenWidth, screenHeight, class1.isPlayingMusic);
+
+            mainmenu.isPlayingMusic = true;
+            class1.isPlayingMusic = true;
         }
 
         protected override void UnloadContent()
@@ -93,23 +96,33 @@ namespace SuperBeerWorld
                 case Screens.Class1:
                     class1.Update(gameTime);
                     button.Visibility = Visibility.Collapsed;
-                    if (!class1.isPlayingMusic)
-                    {
-                       //MediaPlayer.Play(backgroundMusic1);
-                       class1.isPlayingMusic = true;
-                    }
+
+                   
+                    //   if(class1.isPlayingMusic == true)
+                      //     MediaPlayer.Play(backgroundMusic1);
+                       
+                    
                     break;
                 case Screens.MainMenu:
                     mainmenu.Update(gameTime);
                     button.Visibility = Visibility.Visible;
-                    if (!mainmenu.isPlayingMusic)
-                    {
-                        //MediaPlayer.Play(backgroundMusic2);
-                        mainmenu.isPlayingMusic = true;
-                    }
+
+
+                 
+                    //    if(mainmenu.isPlayingMusic == true)
+                     //       MediaPlayer.Play(backgroundMusic2);
+                    
                     break;
                 case Screens.Settings:
+                    settings.Update(gameTime);
                     button.Visibility = Visibility.Collapsed;
+                    if (settings.getMusic()) 
+                    {
+                        mainmenu.isPlayingMusic = true;
+                        class1.isPlayingMusic = true;
+                        
+                    }
+                   
                     break;
             }
 
