@@ -149,7 +149,7 @@ namespace SuperBeerWorld
                 isDrunk = true;
             }
 
-            procenten = ((int)(screenHeight*0.770f) / 100) * Ap;
+            procenten = ((int)(screenHeight*0.777f) / 100) * Ap;
             hoogtePlaatje = ((int)(screenHeight * 0.745f) - procenten) + (int)(screenHeight * 0.129f);
 
 
